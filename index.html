@@ -1,0 +1,172 @@
+<!--
+    Developed by Nit. C. Bravo A.
+    Maturin, Venezuela. September 2017
+    HTML5, CSS3 and JS projects.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quotation App</title>
+    <link rel="stylesheet" href="src/css/style.css">
+    <script src="https://kit.fontawesome.com/77ed5d8444.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!-- header -->
+    <header>
+        <h1>Quotation App</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="btn-show-quote" class="btn-primary btn-navbar active">Quotations</a></li>
+                <li><a href="#" id="btn-show-product" class="btn-primary btn-navbar">Products</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- main content -->
+    <main>
+        <!-- Quotation section -->
+        <section class="main-sections" id="quotes">
+            <div class="section-title">
+                    <h2>Quotations List</h2>
+                    <a class="btn-primary btn-add" href="#add-new-quotation" id="add-quotes">Add Quotation</a>
+            </div>
+            <div class="section-body table-container" id="">
+                    <table class="table" id="quotes-table">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Company</th>
+                                    <th>Email</th>
+                                    <th>Products</th>
+                                    <th>Total ($)</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="quote-table-body">
+                                
+                            </tbody>
+                        </table>
+            </div>
+        </section>
+        <!-- Product section -->
+        <section class="main-sections" id="products">
+                <div class="section-title">
+                        <h2>Products List</h2>
+                        <a class="btn-secondary" href="#add-new-product" id="add-product">Add Product</a>
+                </div>
+                <div class="section-body table-container" id="">
+                        <table class="table" id="product-table">
+                                <thead>
+                                    <tr>
+                                        <th>Code</th>
+                                        <th>Product Name</th>
+                                        <th>Price ($)</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="product-table-body">
+                                    
+                                </tbody>
+                            </table>
+                </div>
+        </section>
+    </main>
+    <!-- footer -->
+    <footer>
+        <ul><li>Copyright, 2017 All rights reserves.</li> <li>Developed by <a href="#">Nit. C. Bravo A.</a> </li></ul>
+    </footer> 
+
+    <!-- Modal Windows -->
+
+    <!-- Product Modal -->
+    <div class="modal" id="add-new-product">
+        <div class="modal-content movedown">
+            <div class="modal-content-header">
+                <h2 class="modal-title">Add new Product</h2>
+                <a href="#" class="btn-close-modal" id="close-modal-product"></a>
+            </div>
+            <div class="modal-content-body">
+                <form action="#" name="product-form" id="product-form">
+                    <div class="inputs-group">
+                            <div class="form-group">
+                                    <label for="product-code" class="form-label">Product Code</label>
+                                    <input type="text" class="form-input" name="product-code" id="product-code" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-name" class="form-label">Product Name</label>
+                                    <input type="text" class="form-input" name="product-name" id="product-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="product-price" class="form-label">Product Price</label>
+                                    <input type="number" class="form-input" name="product-price" id="product-price" min="0" step=".01" required>
+                                </div>
+                    </div>
+                    <div class="buttons-group">              
+                        <button type="reset" class="btn-tertiary btn-reset">Reset</button>
+                        <button type="submit" class="btn-secondary btn-save" id="save-data-product">Create Product</button>        
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Quotating Modal -->
+    <div class="modal" id="add-new-quotation">
+        <div class="modal-content movedown">
+            <div class="modal-content-header">
+                <h2 class="modal-title">Add new Quotation</h2>
+                <a href="#" class="btn-close-modal" id="close-modal-quotation"></a>
+            </div>
+            <div class="modal-content-body">
+                <form action="#" name="quote-form" id="quote-form">
+                    <div class="inputs-group">
+                            <div class="form-group">
+                                    <label for="quote-code" class="form-label"># Code</label>
+                                    <input type="text" class="form-input" name="quote-code" id="quote-code" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quote-company" class="form-label">Company Name</label>
+                                    <input type="text" class="form-input" name="quote-company" id="quote-company" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="company-email" class="form-label">Company Email</label>
+                                    <input type="email" class="form-input" name="email-company" id="company-email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="company-phone" class="form-label">Company Telephone</label>
+                                    <input type="number" class="form-input" name="phone-company" id="company-phone" min="0" required>
+                                </div>
+                    </div>
+                    <div class="table-group">
+                        <h3>List of Products</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Select</th>
+                                </tr>
+                            </thead>
+                            <tbody id="list-product-quotes">
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="buttons-group">
+                        <button type="reset" class="btn-tertiary btn-reset">Reset</button>
+                        <button type="submit" class="btn-secondary btn-save" id="save-data-quote">Create Quotation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+<script src="src/js/main.js" type="module"></script>
+
+</body>
+</html>
+
+<!-- https://ilusionity.com/308-how-to-build-a-random-quote-generator-with-javascript-and-html-for-absolute-beginners-->
+
